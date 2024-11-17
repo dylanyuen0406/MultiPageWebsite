@@ -2,19 +2,93 @@
 body {
     background-color: pink; 
 }
+h1,h2{text-align:center;background-color:yellowgreen;
 
-h1, h2{color:blue;text-align:center}
-header{background-color: wheat;
-padding:5px;}
-img{background-color:white;}
-.image-right{float: right;}
-.right{text-align:right; color:navy}
-.left{text-align:left;color:navy}
-
- p {color: rgb(41, 13, 128); text-align:center;padding:5px;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-background-color:bisque}
+}
 
 .container {
-    background-color: red;
+  display: grid;
+  grid-template-areas: 
+    "image1"
+    "table1"
+    "image2"
+    "table2";
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
+
+/* Individual grid areas */
+.image1 {
+  grid-area: image1;
+}
+
+.table1 {
+  grid-area: table1;
+}
+
+.image2 {
+  grid-area: image2;
+}
+
+.table2 {
+  grid-area: table2;
+}
+
+/* General styles */
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  background-color: white;
+}
+
+.grid-table {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.header-left, .header-right {
+  font-weight: bold;
+  color: navy;
+  padding: 10px;
+  border-bottom: 2px solid #ddd;
+}
+
+.header-left {
+  text-align: left;
+}
+
+.header-right {
+  text-align: right;
+}
+
+.left, .right {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  color: navy;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+/* Responsive layout for smaller screens */
+@media (min-width: 768px) {
+  .container {
+    grid-template-areas: 
+      "image1 table1"
+      "image2 table2";
+    grid-template-columns: 1fr 1fr;
+  }
+}
+  
+
 
